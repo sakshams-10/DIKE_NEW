@@ -1,0 +1,505 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>DÍKĒ — Legal Intelligence Platform</title>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;700;800;900&family=Lora:ital@1&family=Work+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="icon" type="image/png" href="/assets/logo.png">
+<link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+
+<header id="site-header">
+  <div class="wrap row">
+    <a href="#top" class="logo" style="display:flex; align-items:center;"><img src="/assets/logo.png" alt="DÍKĒ" style="height:40px; width:40px; display:block;"></a>
+    <nav style="display:flex; align-items:center; gap:26px;">
+      <span class="nav-links">
+        <a href="#principle">Vision</a>
+        <a href="#pillars">Features</a>
+        <a href="#/app">Workspace</a>
+        <a href="#/community">Community</a>
+        <a href="#/pricing">Pricing</a>
+      </span>
+      <span id="auth-area"><a href="#/login" class="nav-signin">Sign in</a><a href="#/signup" class="pill">Create account</a></span>
+      <button class="menu-btn" id="menu-btn" aria-label="Open menu" aria-expanded="false"><span></span><span></span><span></span></button>
+    </nav>
+  </div>
+  <div class="wrap" id="mobile-menu">
+    <a href="#principle">Vision</a>
+    <a href="#pillars">Features</a>
+    <a href="#/app">Workspace</a>
+    <a href="#/community">Community</a>
+    <a href="#/pricing">Pricing</a>
+    <a href="#/contact">Contact</a>
+    <div id="mobile-auth"><a href="#/login">Sign in</a><a href="#/signup">Create account →</a></div>
+  </div>
+</header>
+
+<div id="view-home" class="view active">
+<!-- 1 · hero — photo: the court building -->
+<section id="top" class="hero">
+  <div class="photo-bg-layer" data-parallax-bg aria-hidden="true">
+    <img src="/assets/hero-court.jpg" alt="">
+  </div>
+  <div class="photo-bg-overlay"></div>
+  <div class="wrap hero-inner">
+    <p class="hero-eyebrow">Legal operating system</p>
+    <h1>The system of record for <span class="accent">legal reasoning</span>.</h1>
+    <p class="lede">One place to draft, cite and preserve the reasoning behind every matter.</p>
+    <div class="cta-row">
+      <a href="#/signup" class="pill">Start free</a>
+      <a href="#/contact" class="text-link">Request access</a>
+    </div>
+  </div>
+</section>
+
+<!-- the three pillars -->
+<section class="pillars" id="pillars">
+  <div class="wrap">
+    <div class="pillars-head">
+      <p class="label reveal-stagger">The three pillars</p>
+      <h2 class="reveal-stagger">Tools that hold up under scrutiny.</h2>
+    </div>
+
+    <div class="pillar">
+      <div class="pillar-text">
+        <p class="label reveal-stagger">The Workspace</p>
+        <h3 class="reveal-stagger">Draft with the record beside you.</h3>
+        <a class="pillar-link reveal-stagger" href="#/app/draft">Open the draft →</a>
+      </div>
+      <div class="mock reveal-stagger">
+        <div class="mock-top">Matter workspace <span>Saved privately</span></div>
+        <div class="mock-body">
+          <div class="mock-doc-title">Writ petition <em>Draft</em></div>
+          <p class="mock-quote">Cited authority: proportionality requires a reasoned response.</p>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- 2 · the record — photo: gavel and laptop -->
+<section class="story-section strip-section pb" id="story">
+  <div class="photo-bg-layer" data-parallax-bg aria-hidden="true">
+    <img src="/assets/gavel-laptop.jpg" alt="">
+  </div>
+  <div class="photo-bg-overlay"></div>
+  <div class="wrap">
+    <p class="label reveal-stagger" style="color:rgba(255,255,255,.7);">The Record</p>
+    <div class="strip">
+      <a class="strip-col reveal-stagger" href="#/app/draft">
+        <span class="strip-k"><span>01</span> Workspace</span>
+        <span class="strip-stat"><b id="st1">0</b><small id="st1c"></small></span>
+      </a>
+      <a class="strip-col reveal-stagger" href="#/app/repo">
+        <span class="strip-k"><span>02</span> Authority</span>
+        <span class="strip-stat"><b id="st2">0</b><small id="st2c"></small></span>
+      </a>
+      <a class="strip-col reveal-stagger" href="#/app/graph">
+        <span class="strip-k"><span>03</span> Relationship</span>
+        <span class="strip-stat"><b id="st3">0</b><small id="st3c"></small></span>
+      </a>
+      <a class="strip-col reveal-stagger" href="#/app/graph">
+        <span class="strip-k"><span>04</span> Constellation</span>
+        <span class="strip-stat"><b id="st4" class="strip-name">—</b><small id="st4c"></small></span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- repository + graph -->
+<section class="pillars pillars-2">
+  <div class="wrap">
+    <div class="pillar rev">
+      <div class="pillar-text">
+        <p class="label reveal-stagger">The Repository</p>
+        <h3 class="reveal-stagger">Keep every authority retrievable.</h3>
+        <a class="pillar-link reveal-stagger" href="#/app/repo">Open the repository →</a>
+      </div>
+      <div class="mock reveal-stagger">
+        <div class="mock-top">Authority repository <span id="pillar-updated">Live</span></div>
+        <div class="mock-head-row"><span>Authority</span><span>Cited</span></div>
+        <div id="pillar-repo-rows"></div>
+      </div>
+    </div>
+
+    <div class="pillar">
+      <div class="pillar-text">
+        <p class="label reveal-stagger">The Knowledge Graph</p>
+        <h3 class="reveal-stagger">See the argument before you write it.</h3>
+        <a class="pillar-link reveal-stagger" href="#/app/graph">Open the graph →</a>
+      </div>
+      <div class="mock reveal-stagger">
+        <div class="mock-top">Citation network <span id="pillar-graph-count"></span></div>
+        <div class="mock-graph"><svg id="pillar-graph" viewBox="0 0 560 330" role="img" aria-label="Citation network"></svg></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 3 · the principle — photo: gavel, scales and books -->
+<section class="photo-bg-section principle" id="principle">
+  <div class="photo-bg-layer" data-parallax-bg aria-hidden="true">
+    <img src="/assets/scales-books.jpg" alt="">
+  </div>
+  <div class="photo-bg-overlay"></div>
+  <div class="wrap photo-bg-content">
+    <p class="label reveal-stagger" style="color:rgba(255,255,255,.75);">The Principle</p>
+    <h2 class="reveal-stagger">Precedent is not opinion.<br><em>It is architecture.</em></h2>
+  </div>
+</section>
+
+<!-- reputation -->
+<section class="rep" id="reputation">
+  <div class="wrap rep-grid">
+    <div>
+      <p class="label reveal-stagger">The Record</p>
+      <h2 class="reveal-stagger">A professional reputation, made legible.</h2>
+      <a class="pillar-link reveal-stagger" href="#/community">Meet the community →</a>
+    </div>
+    <div class="rep-card reveal-stagger" id="rep-card"></div>
+  </div>
+</section>
+
+<!-- 4 · trust & security — photo: gavel in window light -->
+<section class="trust pb" id="trust">
+  <div class="photo-bg-layer" data-parallax-bg aria-hidden="true">
+    <img src="/assets/gavel-window.jpg" alt="">
+  </div>
+  <div class="photo-bg-overlay"></div>
+  <div class="wrap">
+    <p class="label reveal-stagger">Trust &amp; security</p>
+    <h2 class="reveal-stagger">Legal work deserves better defaults.</h2>
+    <div class="trust-grid">
+      <div class="trust-card reveal-stagger">
+        <svg width="34" height="34" viewBox="0 0 34 34" fill="none"><rect x="8" y="15" width="18" height="12" rx="2.5" stroke="currentColor" stroke-width="1.7"/><path d="M12 15v-3.5a5 5 0 0110 0V15" stroke="currentColor" stroke-width="1.7"/></svg>
+        <h3>Private by default</h3>
+        <p>Explicit matter permissions.</p>
+      </div>
+      <div class="trust-card reveal-stagger">
+        <svg width="34" height="34" viewBox="0 0 34 34" fill="none"><path d="M17 5l10 4v7c0 6.5-4.3 10.6-10 12.5C11.3 26.6 7 22.5 7 16V9z" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/><path d="M12.5 16.5l3.2 3.2 5.8-6.4" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        <h3>Encrypted in transit</h3>
+        <p>Protected while it moves.</p>
+      </div>
+      <div class="trust-card reveal-stagger">
+        <svg width="34" height="34" viewBox="0 0 34 34" fill="none"><circle cx="17" cy="17" r="10.5" stroke="currentColor" stroke-width="1.7"/><path d="M6.5 17h21M17 6.5c3.2 3 4.8 6.5 4.8 10.5S20.2 24.5 17 27.5M17 6.5c-3.2 3-4.8 6.5-4.8 10.5S13.8 24.5 17 27.5" stroke="currentColor" stroke-width="1.5"/></svg>
+        <h3>India-first</h3>
+        <p>DPDP and IT Act in view.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- contribution history -->
+<section class="hist" id="history">
+  <div class="wrap">
+    <p class="label reveal-stagger">Contribution history</p>
+    <h2 class="reveal-stagger">No green squares. A record of work.</h2>
+    <div class="hist-card reveal-stagger">
+      <div class="hist-mosaic"><div class="mosaic" id="home-mosaic"></div></div>
+      <div class="hist-side">
+        <div class="seg" id="hist-seg" hidden><button type="button" data-hist="me">You</button><button type="button" data-hist="all">Everyone</button></div>
+        <b id="hist-total">0</b>
+        <span id="hist-total-label">contributions in the last 16 weeks</span>
+        <div class="m-legend">Untouched stone <i class="m-cell"></i><i class="m-cell l1"></i><i class="m-cell l2"></i><i class="m-cell l3"></i><i class="m-cell l4"></i> Polished marble</div>
+        <p class="hist-cap" id="home-mosaic-cap"></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 5 · closing call to action — photo: lawyers reviewing a contract -->
+<section id="contact" class="final-cta pb">
+  <div class="photo-bg-layer" data-parallax-bg aria-hidden="true">
+    <img src="/assets/lawyers-contract.jpg" alt="">
+  </div>
+  <div class="photo-bg-overlay"></div>
+  <div class="wrap">
+    <p class="label reveal-stagger" style="color:rgba(255,255,255,.7);">Request Access</p>
+    <h2 class="reveal-stagger" style="margin-top:14px;">Start free, or bring your whole team.</h2>
+    <div id="signup-form" class="signup reveal-stagger">
+      <label for="email" class="sr-only">Email address</label>
+      <input id="email" type="email" placeholder="you@lawfirm.com">
+      <button id="signup-btn">Request access</button>
+    </div>
+    <p id="signup-note"></p>
+    <p style="margin-top:18px;"><a href="#/signup" style="color:#fff;text-decoration:underline;text-underline-offset:3px;">Or create an account →</a></p>
+  </div>
+</section>
+
+</div>
+
+<!-- ===== other views ===== -->
+
+<!-- ============ CREATE ACCOUNT ============ -->
+<div class="view" id="view-signup" data-title="Create account — DÍKĒ">
+  <div class="wrap page">
+    <div class="auth-wrap">
+      <div class="auth-card">
+        <a href="#/" class="back-link">← Back home</a>
+        <p class="label">Create your account</p>
+        <h1>Create account</h1>
+        <p class="sub">Free to start. Your profile, and everything you add to the workspace, is saved to you.</p>
+        <form id="signup-main" novalidate>
+          <label class="field"><span>Full name</span><input id="su-name" type="text" autocomplete="name" placeholder="Ananya Rao" maxlength="80"></label>
+          <label class="field"><span>Email <small>— kept private, never shown on your profile</small></span><input id="su-email" type="email" autocomplete="email" placeholder="you@lawfirm.com" maxlength="120"></label>
+          <label class="field"><span>Password <small>— at least 8 characters</small></span><input id="su-password" type="password" autocomplete="new-password" minlength="8" maxlength="200"></label>
+          <label class="field"><span>Practice area</span>
+            <select id="su-practice">
+              <option>Litigation</option><option>Corporate &amp; transactional</option><option>In-house counsel</option><option>Judiciary</option><option>Academia / student</option><option>Other</option>
+            </select>
+          </label>
+          <div class="field-row">
+            <label class="field"><span>City</span><input id="su-city" type="text" autocomplete="address-level2" placeholder="Bengaluru" maxlength="60"></label>
+            <label class="field"><span>Enrolled in <small>(year, self-declared)</small></span><input id="su-year" type="number" min="1950" max="2100" placeholder="2014"></label>
+          </div>
+          <label class="check"><input id="su-public" type="checkbox" checked> <span>Show my profile in the Community directory</span></label>
+          <label class="check"><input id="su-consent" type="checkbox"> <span>I understand this workspace stores my profile and the authorities, files and drafts I add.</span></label>
+          <button type="submit" class="a-btn block" id="su-submit">Create account</button>
+          <p class="form-msg" id="su-msg" role="alert"></p>
+        </form>
+        
+        <p class="alt-line">Already have an account? <a href="#/login">Sign in</a></p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ============ SIGN IN ============ -->
+<div class="view" id="view-login" data-title="Sign in — DÍKĒ">
+  <div class="wrap page">
+    <div class="auth-wrap">
+      <div class="auth-card" id="login-card"></div>
+    </div>
+  </div>
+</div>
+
+<!-- ============ CONTACT ============ -->
+<div class="view" id="view-contact" data-title="Contact — DÍKĒ">
+  <div class="wrap page">
+    <div class="contact-grid">
+      <div>
+        <p class="label">Contact</p>
+        <h1>Get in touch.</h1>
+        <p class="muted" style="font-size:17px;">For access, partnerships or support, send us a message here or write to the team directly.</p>
+        <div class="contact-lines">
+          <a href="mailto:dikeindiapvtltd@gmail.com">dikeindiapvtltd@gmail.com</a>
+          <div>Bengaluru, India</div>
+          <a href="https://www.instagram.com/dike_in" target="_blank" rel="noopener">@dike_in on Instagram</a>
+        </div>
+      </div>
+      <div class="auth-card" style="padding:34px 32px;">
+        <form id="contact-form" novalidate>
+          <div class="field-row">
+            <label class="field"><span>Name</span><input id="ct-name" type="text" autocomplete="name" maxlength="80"></label>
+            <label class="field"><span>Work email</span><input id="ct-email" type="email" autocomplete="email" maxlength="120"></label>
+          </div>
+          <label class="field"><span>Topic</span>
+            <select id="ct-topic"><option>Early access</option><option>Practice plan</option><option>Firm plan</option><option>Partnership</option><option>Support</option><option>Something else</option></select>
+          </label>
+          <label class="field"><span>Message</span><textarea id="ct-message" maxlength="2000" placeholder="Tell us a little about your practice and what you'd like to do."></textarea></label>
+          <button type="submit" class="a-btn block" id="ct-submit">Send message</button>
+          <p class="form-msg" id="ct-msg" role="alert"></p>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ============ PRICING ============ -->
+<div class="view" id="view-pricing" data-title="Pricing — DÍKĒ">
+  <div class="wrap page">
+    <div class="page-head" style="max-width:none;">
+      <p class="label">Pricing</p>
+      <h1>Simple pricing for serious work.</h1>
+      <p>Prices are in Indian Rupees and exclude GST.</p>
+      <div class="billing-toggle">
+        <div class="seg" id="bill-seg"><button class="active" data-bill="m">Monthly</button><button data-bill="y">Annual</button></div>
+        <span class="save-pill">Save 20%</span>
+      </div>
+    </div>
+    <div class="plan-grid" id="plan-grid"></div>
+    <p class="fine-print">Sample pricing for demonstration — billing isn't live yet, and every feature is currently open to every account. GST at 18% would be added where applicable, and annual plans would renew yearly unless cancelled before the renewal date.</p>
+  </div>
+</div>
+
+<!-- ============ COMMUNITY ============ -->
+<div class="view" id="view-community" data-title="Community — DÍKĒ">
+  <div class="wrap page">
+    <div class="page-head">
+      <p class="label">Community</p>
+      <h1>Lawyers, firms and judges — on the record.</h1>
+      <p>Every profile is built from real work in the workspace: authorities added and how often they're cited. Qualifications are self-declared.</p>
+    </div>
+    <div class="mem-stats" id="mem-stats"></div>
+    <div class="mem-grid" id="mem-grid"></div>
+  </div>
+</div>
+
+<!-- ============ WORKSPACE (the working app) ============ -->
+<div class="view" id="view-app" data-title="Workspace — DÍKĒ">
+  <div class="wrap page" style="padding-top:48px;">
+    <div id="app-gate"></div>
+    <div id="app-shell" class="app-card" hidden>
+      <div class="app-top">
+        <span class="dots"><i></i><i></i><i></i></span>
+        <span><span class="live-dot"></span><b id="app-who">Workspace</b></span>
+        <span class="sp"></span>
+        <span id="app-sync">Changes save automatically</span>
+      </div>
+      <div class="app-body">
+        <nav class="app-nav" id="app-nav">
+          <button data-pane="repo"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 5h6l2 2h8v12H4z"/></svg>Repository</button>
+          <button data-pane="research"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="6"/><path d="M20 20l-4.5-4.5"/></svg>Research</button>
+          <button data-pane="graph"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="6" cy="7" r="2.4"/><circle cx="18" cy="6" r="2.4"/><circle cx="12" cy="18" r="2.4"/><path d="M8 8l3 8M16 8l-3 8M8.4 7h7.2"/></svg>Graph</button>
+          <button data-pane="draft"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 20l4-1 11-11-3-3L5 16z"/><path d="M14 6l3 3"/></svg>Draft</button>
+          <button data-pane="profile"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="3.6"/><path d="M5 20c1-4 4-6 7-6s6 2 7 6"/></svg>Profile</button>
+          <button data-pane="inbox" id="nav-inbox" hidden><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 6h16v12H4z"/><path d="M4 7l8 6 8-6"/></svg>Inbox</button>
+        </nav>
+        <div class="app-main">
+
+          <!-- Repository -->
+          <div class="pane" data-pane="repo">
+            <div class="pane-head">
+              <h2>Repository</h2>
+              <div class="seg" id="repo-tabs"><button class="active" data-rtab="authorities">Authorities</button><button data-rtab="files">Files</button><button data-rtab="activity">Activity</button></div>
+            </div>
+            <div id="rt-authorities">
+              <div class="toolbar">
+                <input id="repo-search" type="search" placeholder="Search authorities…" aria-label="Search authorities">
+                <select id="repo-kind" aria-label="Filter by type"><option value="all">All types</option><option value="judgment">Judgments</option><option value="statute">Statutes</option><option value="note">Notes</option></select>
+                <select id="repo-sort" aria-label="Sort"><option value="cited">Most cited</option><option value="new">Newest</option></select>
+                <button class="a-btn sm" id="repo-add-toggle" type="button">+ Add authority</button>
+              </div>
+              <form class="add-box" id="repo-add-form" hidden novalidate>
+                <label class="field"><span>Title</span><input id="ra-title" type="text" maxlength="160" placeholder="e.g. Maneka Gandhi v. Union of India"></label>
+                <div class="field-row3">
+                  <label class="field"><span>Type</span><select id="ra-kind"><option value="judgment">Judgment</option><option value="statute">Statute / provision</option><option value="note">Note</option></select></label>
+                  <label class="field"><span>Court / source</span><input id="ra-court" type="text" maxlength="80" placeholder="Supreme Court of India"></label>
+                  <label class="field"><span>Year</span><input id="ra-year" type="number" min="1600" max="2100" placeholder="1978"></label>
+                </div>
+                <div style="display:flex; gap:10px; margin-bottom:14px;"><button class="a-btn sm" type="submit">Add to repository</button><button class="a-btn sm ghost" type="button" id="ra-cancel">Cancel</button><span class="form-msg err" id="ra-msg" style="margin:0; align-self:center;"></span></div>
+              </form>
+              <div class="count-line" id="repo-count"></div>
+              <div id="repo-list"></div>
+            </div>
+            <div id="rt-files" hidden>
+              <div class="drop" id="drop-zone"><input id="file-input" type="file" accept=".pdf,.txt,.md,.csv,.json,.png,.jpg,.jpeg,.webp" hidden><span id="drop-text"><b>Choose a file</b> or drop it here — PDF, text, Markdown, CSV, JSON or an image, up to 10 MB</span></div>
+              <p class="form-msg" id="file-msg"></p>
+              <div id="file-list"></div>
+            </div>
+            <div id="rt-activity" hidden><div id="act-list"></div></div>
+          </div>
+
+          <!-- Research -->
+          <div class="pane" data-pane="research">
+            <div class="pane-head"><h2>Research</h2></div>
+            <p class="muted">Ask a question and the answer is drawn only from the authorities in your repository — nothing outside it, and it says so when the repository doesn't cover the question.</p>
+            <form class="ask-form" id="ask-form"><input id="ask-input" type="text" maxlength="400" placeholder="e.g. Which of my authorities deal with the right to privacy?" aria-label="Ask your repository"><button type="submit" class="a-btn" id="ask-btn">Ask</button></form>
+            <div class="chips" id="ask-chips"></div>
+            <div class="ask-out idle" id="ask-out">Your answer will appear here.</div>
+            <div class="src-line" id="ask-src"></div>
+          </div>
+
+          <!-- Graph -->
+          <div class="pane" data-pane="graph">
+            <div class="pane-head"><h2>Citation graph</h2></div>
+            <p class="muted">Each node is an authority; the arrows show which one cites which. Select a node to see its connections, or to link it to another.</p>
+            <div class="graph-wrap">
+              <div class="graph-box"><svg id="graph-svg" viewBox="0 0 640 420" role="img" aria-label="Citation graph"></svg><div class="legend" id="graph-legend"></div></div>
+              <div class="graph-side" id="graph-side"></div>
+            </div>
+          </div>
+
+          <!-- Draft -->
+          <div class="pane" data-pane="draft">
+            <div class="pane-head"><h2>Draft</h2><button class="a-btn sm ghost" id="draft-copy" type="button">Copy draft</button></div>
+            <div class="draft-grid">
+              <div>
+                <input class="draft-title" id="draft-title" type="text" placeholder="Untitled draft" maxlength="120" aria-label="Draft title">
+                <textarea class="draft-body" id="draft-body" placeholder="Start writing. Use “Cite” on an authority to drop it into the text — it also counts as a citation in the repository." aria-label="Draft text"></textarea>
+                <div class="draft-foot"><span id="draft-words">0 words</span><span id="draft-status">Private to you</span></div>
+              </div>
+              <div class="picker">
+                <h4>Cite from repository</h4>
+                <input id="pick-search" type="search" placeholder="Filter…" aria-label="Filter authorities">
+                <div id="pick-list"></div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Profile -->
+          <div class="pane" data-pane="profile">
+            <div id="profile-body"></div>
+          </div>
+
+          <!-- Inbox (owner only) -->
+          <div class="pane" data-pane="inbox">
+            <div class="pane-head"><h2>Inbox</h2></div>
+            <p class="muted">Messages and early-access requests from the contact form. Only the workspace admin can read them.</p>
+            <div id="inbox-list"></div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div id="toast" role="status" aria-live="polite"></div>
+
+<footer>
+  <div class="wrap footer-inner left">
+    <div class="foot-grid">
+      <div class="foot-brand">
+        <a href="#top" class="foot-logo"><img src="/assets/logo.png" alt="DÍKĒ" width="46" height="46"><span>DÍKĒ</span></a>
+        <p>The system of record for legal reasoning.</p>
+      </div>
+      <div class="foot-col">
+        <h4>Product</h4>
+        <a href="#principle">Vision</a>
+        <a href="#pillars">Features</a>
+        <a href="#/community">Community</a>
+        <a href="#/pricing">Pricing</a>
+      </div>
+      <div class="foot-col">
+        <h4>Company</h4>
+        <a href="#/login">Sign in</a>
+        <a href="#/signup">Create account</a>
+        <a href="#/contact">Contact</a>
+        <a href="https://www.instagram.com/dike_in" target="_blank" rel="noopener">Instagram</a>
+      </div>
+    </div>
+    <div class="footer-bottom">© 2026 DÍKĒ Legal Technologies Pvt. Ltd. · dikeindiapvtltd@gmail.com</div>
+  </div>
+</footer>
+
+<button id="chat-toggle" aria-label="Open legal assistant">⚖</button>
+<div id="chat-panel">
+  <div id="chat-head">
+    <div>
+      <div style="font-family:'Archivo',sans-serif; font-weight:700; font-size:15px;">DÍKĒ Assistant</div>
+      <div style="font-size:10.5px; opacity:.8; text-transform:uppercase; letter-spacing:.08em;">Legal questions only</div>
+    </div>
+    <button id="chat-close" aria-label="Close" style="background:none;border:none;color:#fff;font-size:18px;cursor:pointer;">×</button>
+  </div>
+  <div id="chat-messages">
+    <div style="display:flex; justify-content:flex-start;">
+      <div style="max-width:82%; padding:9px 13px; font-size:13.5px; line-height:1.5; border-radius:8px; background:var(--paper); border:1px solid var(--line);">Ask me about case law, contracts, or filings — I can only help with legal questions.</div>
+    </div>
+  </div>
+  <div id="chat-input-row">
+    <label for="chat-input" class="sr-only">Ask a legal question</label>
+    <input id="chat-input" type="text" placeholder="Ask a legal question…">
+    <button id="chat-send">Send</button>
+  </div>
+</div>
+
+<script src="/js/site.js"></script>
+
+<script src="/js/app.js"></script>
+
+</body>
+</html>

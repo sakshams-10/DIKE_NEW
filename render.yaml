@@ -1,0 +1,21 @@
+# One-click deploy on Render: New → Blueprint → pick this repo.
+services:
+  - type: web
+    name: dike
+    runtime: node
+    plan: free
+    buildCommand: npm ci --omit=dev
+    startCommand: node server.js
+    healthCheckPath: /api/health
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: DATABASE_URL
+        fromDatabase: { name: dike-db, property: connectionString }
+      - key: ADMIN_EMAIL
+        sync: false          # set to your email so you can read the contact inbox
+      - key: ANTHROPIC_API_KEY
+        sync: false          # optional: turns on AI answers in Research and the chat assistant
+databases:
+  - name: dike-db
+    plan: free
