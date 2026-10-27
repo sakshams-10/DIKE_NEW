@@ -41,7 +41,7 @@ async function startSession(res, userId) {
   const expires = new Date(Date.now() + config.sessionDays * 86400000);
   await query('INSERT INTO sessions (token_hash, user_id, expires_at) VALUES ($1,$2,$3)', [sha(token), userId, expires]);
   res.cookie(COOKIE, token, {
-    httpOnly: true, sameSite: 'lax', secure: config.isProd, expires, path: '/'
+    httpOnly: true, sameSite: config.isProd ? 'none' : 'lax', secure: config.isProd, expires, path: '/'
   });
 }
 async function endSession(req, res) {
